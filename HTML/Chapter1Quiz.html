@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Learn how to defeat a disease/HowDoIStayHealthy/Quiz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+        .question {
+            font-family: verdana;
+            font-size: 16px;
+            
+            
+        }
+        
+        .answers {
+            font-family: monospace;
+            font-size: 16px;
+            
+        }
+        
+        #submit {
+            background-color: antiquewhite;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-size: 24px;
+            padding: inherit;
+            
+        }
+        
+        .radio {
+            cursor: pointer;
+        }
+    
+    
+    </style>
+    
+    
+    </head>
+    
+<body bgcolor="lavender">
+    <!---Det skal bli en mini quiz når den blir rett--->
+    
+    <h1 style="text-align: center; font-family: fantasy; color: maroon; font-size: 46px;">How do I stay healthy! Mini Quiz!</h1>
+    
+    <br>
+    <br>
+        <div class="col-sm-4">
+            
+            <img src="../Assets/Quiz1Message.png" alt="Welcome message" width="400px" height="400px">
+            <img src="../Assets/Maincharacter.png" alt="Main character" witdth="400px"; height="400px">
+        </div>
+    <br>
+    <br>
+    
+    <div id="quiz"></div>
+    <button id="submit">Submit Quiz</button>
+    <div id="results"></div>
+    
+    
+    
+   <script>
+       
+    
+     var myQuestions = [
+           {
+               question: "What was the first step?",
+               answers: {
+                    a: "Shopping: do not buy everything",
+                    b: "Dry your hands on clean paper or towel",
+                    c: "Wash your hands with water and soap"
+                },
+                correctAnswer: "c"
+           },
+                       {
+                question: "Can you dry your hand on a dirty towel?",
+                answers: {
+                    a: "Yes",
+                    b: "No"
+                },
+                correctAnswer: "b"
+            },
+            
+            {
+                question: "How much should you buy at the store?",
+                answers: {
+                    a: "Only what you need",
+                    b: "Everything, they might get empty",
+                    c: "Nothing it is dangerous to shop"
+                },
+                correctAnswer: "a"
+            }
+       ];
+
+     var quizContainer = document.getElementById('quiz');
+     var resultsContainer = document.getElementById('results');
+     var submitButton = document.getElementById('submit');
+
+     generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+       
+    function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+        
+        
+        
+        function showQuestions(questions, quizContainer){
+            
+            var output = [];
+            var answers;
+            
+           
+            for(var i=0; i<questions.length; i++) {
+                answers = [];
+                
+                for(letter in questions[i].answers) {
+                    answers.push(
+                    '<br>' + '<label>'
+                    + '<input type="radio" name="question'+i+'"value="'+letter+'">'
+                        + letter + ": "
+                        +questions[i].answers[letter]
+                        + '</label>' + '<br>'
+                    );
+                }
+                
+                output.push(
+                '<div class="question">' + questions[i].question + '</div>' 
+                + '<div class="answers">' + answers.join('') + '</div>' + '<br>' + '<br>'
+                );
+            }
+            
+            quizContainer.innerHTML = output.join('');
+        }
+        
+        
+        function showResult(questions, quizContainer, resultsContainer){
+            
+            var answerContainers = quizContainer.querySelectorAll('.answers');
+            
+            var userAnswer = '';
+            var numCorrect = 0;
+            
+            for(var i=0; i<questions.length; i++) {
+                userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+                
+                if(userAnswer===questions[i].correctAnswer) {
+                    numCorrect++;
+                    answerContainers[i].style.color = 'lightgreen';
+                }
+                
+                else {
+                    answerContainers[i].style.color = 'red';
+                }
+            }
+            
+            resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+        }
+        
+        //show question
+        showQuestions(questions, quizContainer);
+        
+        //when click submit
+        submitButton.onclick = function() {
+            showResult(questions, quizContainer, resultsContainer);
+        }
+        
+        
+    }
+    
+       
+    
+
+    
+    </script>
+    
+      <br>
+            <br>
+            <br>
+    
+   
+    
+     <div class="col-sm-4">
+                <a href="MainMenu.html">
+                <img src="../Assets/Menubutton.png" alt="MainMenu" width="200px" height="100px" style="align-content: center"></a>
+    
+                <a href="ExitiPage.html">
+                <img src="../Assets/Exitbutton.png" alt="ExitButton" style="width: 100px;height: 100px; align-content: center;" ></a>
+         
+         </div>
+    
+    
+    </body>
+</html>

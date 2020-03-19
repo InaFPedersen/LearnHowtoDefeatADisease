@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn how to defeat a disease</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="../CSS/style.css" rel="stylesheet" />
+    <link href="../CSS/image-puzzle.css" rel="stylesheet" />
+    <script src="../Js/Image-puzzle.js"></script>
+    
+    
+    </head>
+    
+<body>
+    
+    
+    
+    <div class="jumbotron text-center">
+    
+    <h1 style="text-align: center; font-family: fantasy; color: maroon; font-size: 46px;">Puzzle time!</h1>
+        
+                <a href="MainMenu.html">
+                <button style=" font-size: 30px; background-color: antiquewhite; padding: 15px 32px; text-align: center; display: inline-block;" >Main Menu</button></a>
+    
+                <a href="ExitiPage.html">
+                <button style=" font-size: 30px; background-color: antiquewhite; padding: 15px 32px; text-align: center; display: inline-block;">Exit Game</button></a>
+    
+        
+    </div>
+    
+   <br>
+    
+    <div id="collage">
+    <h2>Image Puzzle</h2>
+    <hr />
+        
+        <div id="playPanel" style="padding: 5px;display: none;">
+            
+            <h3 id="imgTitle"></h3>
+            
+            <hr />
+            
+            <div style="display: inline-block; margin: auto; width: 95%; vertical-align: top;">
+            
+                <ul id="sortable" class="sortable"></ul>
+                
+                <div id="actualImageBox">
+                    
+                    <div id="stepBox">
+                    
+                        <div>Steps: </div>
+                        
+                        <div class="stepCount">0</div>
+                 
+                    </div>
+                    
+                    <div id="timeBox">
+                    
+                        Time taken: <span id="timerPanel"></span> secs
+                    
+                    </div>
+                    
+                    <img id="actualImage" />
+                    
+                    <div>Re-arrange to create a picture like this one!</div>
+                    
+                    <p id="levelPanel">
+                    
+                        <input type="radio" name="level" id="easy" checked="checked" value="3" onchange="imagePuzzle.startGame(images, this.value);" />
+                        <label for="easy">Easy</label>
+                        
+                        <input type="radio" name="level" id="medium" checked="checked" value="4" onchange="imagePuzzle.startGame(images, this.value);" />
+                        <label for="medium">Medium</label>
+                        
+                        <input type="radio" name="level" id="hard" checked="checked" value="5" onchange="imagePuzzle.startGame(images, this.value);" />
+                        <label for="hard">Hard</label>
+                  
+                    </p>
+                    
+                    <div>
+                    
+                        <button id="btnRule" type="button" class="btn" onclick="rules();">Game Rules!</button>
+                        
+                        <button id="newPhoto" type="button" class="btn" onclick="restart();">Get Another Photo!</button>
+                        
+                        <button id="btnReplay" type="button" class="btn" onclick="about();">About</button>
+                    
+                    </div>
+                
+                </div>
+            
+            </div>
+        
+        
+        </div>
+        
+        <div id="gameOver" style="display: none;">
+        
+            <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center;">
+            
+                <h2 style="text-align: center">Game is Over!!!</h2>
+            
+                Congratulations!! <br> You have completed this picture.
+                
+                <br> Steps: <Span class="stepCount">0</Span> Steps!
+                
+                <br>Time Taken: <span class="timeCount">0</span> seconds <br>
+                
+                <div>
+                
+                    <button type="button" onclick="window.location.reload(true);">Play Again!</button>
+                
+                </div>
+            
+            </div>
+        
+        </div>
+        
+        <script>
+        
+            var images = [
+                
+                {src: '../Assets/ArtPiece.jpg', title: 'ArtPiece'},
+                
+                {src: '../Assets/ElepantTree.jpg', title: 'ElepantTree'},
+                
+                {src: '../Assets/Geometry.jpg', title: 'Geometry'},
+                
+                {src: '../Assets/MoonlightInWater.jpg', title: 'MoonlightInWater'},
+                
+                {src: '../Assets/Parallellworlds.jpg', title: 'Parallellworlds'},
+            ];
+            
+            window.onload = function () {
+                
+                var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute('value');
+                imagePuzzle.startGame(images, gridSize);
+            };
+            
+            function restart() {
+                
+                var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute('value');
+                imagePuzzle.startGame(images, gridSize);
+            }
+            
+            function rules() {
+                
+                alert('Re arrange the image parts in a way that it correctly forms the picture you see on the side. The number of steps will be counted.');
+            }
+            
+            function about() {
+                
+                alert('Images in the pictures is designed by Ina F. Pedersen');
+            }
+        
+        
+        </script>
+        
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    
+     
+                
+            
+      
+    </body>
+</html>
