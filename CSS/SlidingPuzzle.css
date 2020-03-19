@@ -31,11 +31,11 @@ body {
     /* Firefox 4, Safari 5, Opera 10, IE 9 */
     border: 18px solid #2C3E50;
     border-radius: 10px;
-    background-color: #2C3E50; }
+    background-color: darkblue; }
     .sliding-puzzle-figure .sliding-puzzle .tile {
       position: absolute;
       background-color: #7BC8F3;
-      color: #1F1F1F;
+      color: darkblue;
       border-radius: 10px;
       cursor: pointer;
       width: 31%;
