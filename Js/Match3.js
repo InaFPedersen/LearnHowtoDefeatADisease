@@ -271,7 +271,7 @@ window.onload = function() {
         drawFrame();
         
         // Draw score
-        context.fillStyle = "#000000";
+        context.fillStyle = "#0D0D9B";
         context.font = "24px Verdana";
         drawCenterText("Score:", 30, level.y+40, 150);
         drawCenterText(score, 30, level.y+70, 150);
@@ -282,7 +282,7 @@ window.onload = function() {
         // Draw level background
         var levelwidth = level.columns * level.tilewidth;
         var levelheight = level.rows * level.tileheight;
-        context.fillStyle = "#000000";
+        context.fillStyle = "#0D0D9B";
         context.fillRect(level.x - 4, level.y - 4, levelwidth + 8, levelheight + 8);
         
         // Render tiles
@@ -316,7 +316,7 @@ window.onload = function() {
         context.fillRect(1, 1, canvas.width-2, canvas.height-2);
         
         // Draw header
-        context.fillStyle = "#303030";
+        context.fillStyle = "#0D0D9B";
         context.fillRect(0, 0, canvas.width, 65);
         
         // Draw title
@@ -334,7 +334,7 @@ window.onload = function() {
     function drawButtons() {
         for (var i=0; i<buttons.length; i++) {
             // Draw button shape
-            context.fillStyle = "#000000";
+            context.fillStyle = "#0D0D9B";
             context.fillRect(buttons[i].x, buttons[i].y, buttons[i].width, buttons[i].height);
             
             // Draw button text
