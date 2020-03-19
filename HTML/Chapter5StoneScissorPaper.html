@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Learn how to defeat a disease</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <style>
+       *{margin:0;padding:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}::selection{background:#fb9fe5;text-shadow:none}a{color:#0088CC;text-decoration:none;outline:0}a:hover{color:#005580}a img{border:none}img{max-width:100%}html{font-size:100%}body{padding:5%;font:300 1.25em/1.6 monospace;background:#fff;color:#000;}h1{font-family:"Helvetica Neue",sans-serif;line-height:1;font-weight:300;margin-bottom:1em;}.game{padding:2em;background:#eee;}
+    </style>
+    
+    
+    </head>
+    
+<body bgcolor="lavender">
+    
+    
+    
+    <div class="jumbotron text-center">
+    
+    <h1 style="text-align: center; font-family: fantasy; color: maroon; font-size: 46px;">Rock Scissor Paper Game!</h1>
+    
+    </div>
+   <br>
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-sm-4">
+                
+                <img src="../Assets/Chap5Message.png" alt="Welcome message" width="400px" height="400px">
+                
+                <img src="../Assets/Maincharacter.png" alt="Main character" witdth="400px"; height="400px"> 
+                
+                
+            </div>
+            <br>
+            <br>
+            
+                <div class="game">
+
+    <script>
+        // User choice
+        var userChoice = prompt("Do you choose rock, paper or scissors?");
+
+        if (! userChoice) {
+            // User choice was undefined
+            document.write("<p>Player 1, you cheated! Refresh this screen and fight like a man.</p>");
+        } else {
+            // Display user choice
+            document.write("<p>Player 1:" + " " + userChoice + "</p>");
+        }
+
+        // Computer choice
+        var computerChoice = Math.random();
+        if (computerChoice < 0.34) {
+            computerChoice = "rock";
+        } else if(computerChoice <= 0.67) {
+            computerChoice = "paper";
+        } else {
+            computerChoice = "scissors";
+        }
+
+        // Display computer choice
+        document.write("<p>Computer:" + " " + computerChoice + "</p>");
+
+        // Compare user choice vs computer choice
+        var compare = function(choice1, choice2) {
+            if (choice1 === choice2) {
+                return "It's a tie!";
+            }
+            if (choice1 === "rock") {
+                if (choice2 === "scissors") {
+                    // rock wins
+                    return "You win!";
+                } else {
+                    // paper wins
+                    return "You lose! Try again.";
+                }
+            }
+            if (choice1 === "paper") {
+                if (choice2 === "rock") {
+                    // paper wins
+                    return "You win!";
+                } else {
+                    // scissors wins
+                    return "You lose! Try again.";
+                }
+            }
+            if (choice1 === "scissors") {
+                if (choice2 === "rock") {
+                    // rock wins
+                    return "You lose! Try again.";
+                } else {
+                    // scissors wins
+                    return "You win!";
+                }
+            }
+        };
+
+        // Run the compare function
+        var results = compare(userChoice,computerChoice);
+
+        // Display results
+        document.write("<br><hr><br>" + results);
+    </script>
+
+</div>
+            <br>
+            <a href="Chapter5StoneScissorPaper.html">
+                <img src="../Assets/PlayAgain.png" alt="MainMenu" width="200px" height="100px" style="align-content: center"></a>
+            <br>
+            <br>
+            
+            <div class="col-sm-4">
+                <a href="MainMenu.html">
+                <img src="../Assets/Menubutton.png" alt="MainMenu" width="200px" height="100px" style="align-content: center"></a>
+    
+                <a href="ExitiPage.html">
+                <img src="../Assets/Exitbutton.png" alt="ExitButton" style="width: 100px;height: 100px; align-content: center;" ></a>
+            </div>
+    
+    </div>
+    
+</div>
+      
+    </body>
+</html>
