@@ -1,9 +1,11 @@
 var timerFunction;
 
 var imagePuzzle = {
+    
     stepCount: 0,
     startTime: new Date().getTime(),
     startGame: function (images, gridSize) {
+        
         this.setImage(images, gridSize);
         helper.doc('playPanel').style.display = 'block';
         helper.shuffle('sortable');
@@ -13,13 +15,16 @@ var imagePuzzle = {
     },
     
     tick: function () {
+        
         var now = new Date().getTime();
         var elapsedTime = parseInt((now - imagePuzzle.startTime) / 1000, 10);
         helper.doc('timerPanel').textContent = elapsedTime;
         timerFunction = setTimeout(imagePuzzle.tick, 1000);
+        
     },
     
     setImage: function (images, gridSize = 4) {
+        
         var percentage = 100 / (gridSize - 1);
         var image = images[Math.floor(Math.random() * images.length)];
         helper.doc('imgTitle').innerHTML = image.title;
@@ -27,6 +32,7 @@ var imagePuzzle = {
         helper.doc('sortable').innerHTML = '';
         
         for (var i = 0; i < gridSize * gridSize; i++) {
+            
             var xpos = (percentage * (i % gridSize)) + '%';
             var ypos = (percentage * Math.floor(i / gridSize)) + '%';
 
@@ -49,6 +55,7 @@ var imagePuzzle = {
                 let p = dest.parentNode;
 
                 if (origin && dest && p) {
+                    
                     let temp = dest.nextSibling;
                     p.insertBefore(dest, origin);
                     p.insertBefore(origin, temp);
@@ -59,9 +66,11 @@ var imagePuzzle = {
                     document.querySelector('.timeCount').textContent = (parseInt((now - imagePuzzle.startTime) / 1000, 10));
 
                     if (isSorted(vals)) {
+                        
                         // helper.doc('actualImageBox').style.display = 'none';
                         // helper.doc('gameOver').style.display = 'block';
                         helper.doc('actualImageBox').innerHTML = helper.doc('gameOver').innerHTML;
+                        
                     }
                 }
             };
@@ -74,16 +83,22 @@ var imagePuzzle = {
 };
 
 isSorted = (arr) => arr.every((elem, index) => {
+    
     return elem == index;
+    
 });
 
 var helper = {
+    
     doc: (id) => document.getElementById(id) || document.createElement("div"),
 
     shuffle: (id) => {
+        
         var ul = document.getElementById(id);
         for (var i = ul.children.length; i >= 0; i--) {
+            
             ul.appendChild(ul.children[Math.random() * i | 0]);
+            
         }
     }
 }
