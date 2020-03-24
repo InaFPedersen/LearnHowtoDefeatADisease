@@ -140,7 +140,7 @@ window.onload = function() {
     // Initialize the game
     function init() {
         // Load images
-        images = loadImages(["../Assets/bubble-sprites.png"]);
+        images = loadImages(["../Assets/bubbleSprites.png"]);
         bubbleimage = images[0];
     
         // Add mouse events
@@ -790,7 +790,7 @@ window.onload = function() {
         var yoffset =  level.tileheight/2;
         
         // Draw level background
-        context.fillStyle = "#C9C7C8";
+        context.fillStyle = "#E2DEDF";
         context.fillRect(level.x - 4, level.y - 4, level.width + 8, level.height + 4 - yoffset);
         
         // Render tiles
