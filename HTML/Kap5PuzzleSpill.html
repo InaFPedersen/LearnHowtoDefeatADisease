@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Lær hvordan å forebygge/bekjempe en sykdom/Åh, Jeg ble syk/Puzzle Spill</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="../CSS/style.css" rel="stylesheet" />
+    <link href="../CSS/image-puzzle.css" rel="stylesheet" />
+    <script src="../Js/Image-puzzle.js"></script>
+    
+    
+    </head>
+    
+<body>
+    
+    
+    
+    <div class="jumbotron text-center">
+    
+    <h1 style="text-align: center; font-family: fantasy; color: maroon; font-size: 46px;">Puzzle Spill!</h1>
+        
+                <a href="Hovedmeny.html">
+                <button style=" font-size: 30px; background-color: antiquewhite; padding: 15px 32px; text-align: center; display: inline-block;" >Hoved Meny</button></a>
+         
+                <a href="Kapittel5.html">
+                <button style=" font-size: 30px; background-color: antiquewhite; padding: 15px 32px; text-align: center; display: inline-block;">Velg et annet spill!</button></a>
+    
+                <a href="Avslutt.html">
+                <button style=" font-size: 30px; background-color: antiquewhite; padding: 15px 32px; text-align: center; display: inline-block;">Exit</button></a>
+    
+        
+    </div>
+    
+   <br>
+    
+    <div id="collage">
+    <h2>Bilde Puzzle Spill</h2>
+    <hr />
+        
+        <div id="playPanel" style="padding: 5px;display: none;">
+            
+            <h3 id="imgTitle"></h3>
+            
+            <hr />
+            
+            <div style="display: inline-block; margin: auto; width: 95%; vertical-align: top;">
+            
+                <ul id="sortable" class="sortable"></ul>
+                
+                <div id="actualImageBox">
+                    
+                    <div id="stepBox">
+                    
+                        <div>Steg: </div>
+                        
+                        <div class="stepCount">0</div>
+                 
+                    </div>
+                    
+                    <div id="timeBox">
+                    
+                        Tid tatt: <span id="timerPanel"></span> sek
+                    
+                    </div>
+                    
+                    <img id="actualImage" />
+                    
+                    <div>Flytt på delene i bilde slik at det ser likt som det ferdige bilde!</div>
+                    
+                    <p id="levelPanel">
+                    
+                        <input type="radio" name="level" id="easy" checked="checked" value="3" onchange="imagePuzzle.startGame(images, this.value);" />
+                        <label for="easy">Lett</label>
+                        
+                        <input type="radio" name="level" id="medium" checked="checked" value="4" onchange="imagePuzzle.startGame(images, this.value);" />
+                        <label for="medium">Medium</label>
+                        
+                        <input type="radio" name="level" id="hard" checked="checked" value="5" onchange="imagePuzzle.startGame(images, this.value);" />
+                        <label for="hard">Vanskelig</label>
+                  
+                    </p>
+                    
+                    <div>
+                    
+                        <button id="btnRule" type="button" class="btn" onclick="rules();">Spill Regler!</button>
+                        
+                        <button id="newPhoto" type="button" class="btn" onclick="restart();">Få nytt bilde!</button>
+                        
+                        <button id="btnReplay" type="button" class="btn" onclick="about();">Om Spillet</button>
+                    
+                    </div>
+                
+                </div>
+            
+            </div>
+        
+        
+        </div>
+        
+        <div id="gameOver" style="display: none;">
+        
+            <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center;">
+            
+                <h2 style="text-align: center">Spillet er Over!!!</h2>
+            
+                Gratulerer!! <br> Du har gjort ferdig bilde.
+                
+                <br> Steg: <Span class="stepCount">0</Span> Steg!
+                
+                <br>Tid Tatt: <span class="timeCount">0</span> sekunder <br>
+                
+                <div>
+                
+                    <button type="button" onclick="window.location.reload(true);">Spill igjen!</button>
+                
+                </div>
+            
+            </div>
+        
+        </div>
+        
+        <script>
+        
+            var images = [
+                
+                {src: '../Assets/ArtPiece.jpg', title: 'Kunstverk'},
+                
+                {src: '../Assets/ElepantTree.jpg', title: 'ElefantTree'},
+                
+                {src: '../Assets/Geometry.jpg', title: 'Geometri'},
+                
+                {src: '../Assets/MoonlightInWater.jpg', title: 'MåneSkinn i vannet'},
+                
+                {src: '../Assets/Parallellworlds.jpg', title: 'Parallelle verdener'},
+            ];
+            
+            window.onload = function () {
+                
+                var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute('value');
+                imagePuzzle.startGame(images, gridSize);
+            };
+            
+            function restart() {
+                
+                var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute('value');
+                imagePuzzle.startGame(images, gridSize);
+            }
+            
+            function rules() {
+                
+                alert('Velg vanskelighets grad. Flytt på delene i bilde slik at de blir plassert riktig i forhold til bilde av orginalbilde. Antall steg vil bli telt');
+            }
+            
+            function about() {
+                
+                alert('Bildene er laget/designet av Ina F. Pedersen');
+            }
+        
+        
+        </script>
+        
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    
+     
+                
+            
+      
+    </body>
+</html>

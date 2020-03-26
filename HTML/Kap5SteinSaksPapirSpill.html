@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Learn how to prevent/defeat a disease</title>
+    <title>Lær hvordan å forebygge/bekjempe en sykdom/Åh, Jeg ble syk/Stein Saks Papir Spill</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -74,7 +74,7 @@
     
     <div class="jumbotron text-center">
     
-    <h1 style="text-align: center; font-family: fantasy; color: maroon; font-size: 46px;">Rock Scissor Paper Game!</h1>
+    <h1 style="text-align: center; font-family: fantasy; color: maroon; font-size: 46px;">Stein Saks Papir Spill!</h1>
     
     </div>
    <br>
@@ -83,7 +83,7 @@
             
             <div class="col-sm-4">
                 
-                <img src="../Assets/RockPaperScissorMessage.png" alt="Welcome message" width="400px" height="400px">
+                <img src="../Assets/SteinSaksPapirBeskjed.png" alt="Welcome message" width="400px" height="400px">
                 
                 <img src="../Assets/Maincharacter.png" alt="Main character" witdth="400px"; height="400px"> 
                 
@@ -96,7 +96,7 @@
 
     <script>
         // User choice
-        var userChoice = prompt("Write one of these 3 words! Do you choose rock, paper or scissors? ");
+        var userChoice = prompt("Skriv presis(helt likt) et av de 3 ordene! Velger du stein, saks eller papir? ");
 
         if (! userChoice) {
             // User choice was undefined
@@ -109,11 +109,11 @@
         // Computer choice
         var computerChoice = Math.random();
         if (computerChoice < 0.34) {
-            computerChoice = "rock";
+            computerChoice = "stein";
         } else if(computerChoice <= 0.67) {
-            computerChoice = "paper";
+            computerChoice = "papir";
         } else {
-            computerChoice = "scissors";
+            computerChoice = "saks";
         }
 
         // Display computer choice
@@ -122,33 +122,33 @@
         // Compare user choice vs computer choice
         var compare = function(choice1, choice2) {
             if (choice1 === choice2) {
-                return "It's a tie!";
+                return "Det ble uavgjort!";
             }
-            if (choice1 === "rock") {
-                if (choice2 === "scissors") {
+            if (choice1 === "stein") {
+                if (choice2 === "saks") {
                     // rock wins
-                    return "You win!";
+                    return "Du vant!";
                 } else {
                     // paper wins
-                    return "You lose! Try again.";
+                    return "Du tapte! Prøv igjen.";
                 }
             }
-            if (choice1 === "paper") {
-                if (choice2 === "rock") {
+            if (choice1 === "papir") {
+                if (choice2 === "stein") {
                     // paper wins
-                    return "You win!";
+                    return "Du vant!";
                 } else {
                     // scissors wins
-                    return "You lose! Try again.";
+                    return "Du tapte! Prøv igjen.";
                 }
             }
-            if (choice1 === "scissors") {
-                if (choice2 === "rock") {
+            if (choice1 === "saks") {
+                if (choice2 === "stein") {
                     // rock wins
-                    return "You lose! Try again.";
+                    return "Du tapte! Prøv igjen.";
                 } else {
                     // scissors wins
-                    return "You win!";
+                    return "Du vant!";
                 }
             }
         };
@@ -162,19 +162,19 @@
 
 </div>
             <br>
-            <a href="Chapter5StoneScissorPaper.html">
-                <img src="../Assets/PlayAgain.png" alt="MainMenu" width="200px" height="100px" style="align-content: center"></a>
+            <a href="Kap5SteinSaksPapirSpill.html">
+                <img src="../Assets/SpillIgjen.png" alt="MainMenu" width="200px" height="100px" style="align-content: center"></a>
             <br>
             <br>
             
             <div class="col-sm-4">
-                <a href="MainMenu.html">
-                <img src="../Assets/Menubutton.png" alt="MainMenu" width="200px" height="100px" style="align-content: center"></a>
+                <a href="Hovedmeny.html">
+                <img src="../Assets/Meny.png" alt="MainMenu" width="200px" height="100px" style="align-content: center"></a>
                 
-                <a href="Chapter5.html">
-                <img src="../Assets/ChooseAnotherGame.png" alt="MainMenu" width="200px" height="100px" style="align-content: center"></a>
+                <a href="Kapittel5.html">
+                <img src="../Assets/VelgNyttSpill.png" alt="MainMenu" width="200px" height="100px" style="align-content: center"></a>
     
-                <a href="ExitiPage.html">
+                <a href="Avslutt.html">
                 <img src="../Assets/Exitbutton.png" alt="ExitButton" style="width: 100px;height: 100px; align-content: center;" ></a>
             </div>
     
